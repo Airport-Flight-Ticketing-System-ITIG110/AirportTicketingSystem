@@ -1,16 +1,13 @@
 package org.itig110.AirportFLightTicketingSystem.repo;
 
 import org.itig110.AirportFLightTicketingSystem.model.Flight;
-import org.itig110.AirportFLightTicketingSystem.model.FlightSearchInfo;
+import org.itig110.AirportFLightTicketingSystem.dto.FlightSearchInfo;
 import org.itig110.AirportFLightTicketingSystem.util.DateUtil;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.stream.Stream;
 
 
 @Component

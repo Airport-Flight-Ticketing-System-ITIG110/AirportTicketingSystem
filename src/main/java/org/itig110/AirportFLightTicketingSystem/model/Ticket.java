@@ -1,8 +1,9 @@
 package org.itig110.AirportFLightTicketingSystem.model;
 public class Ticket  {
 
-private String number;
+ private String number;
  private Passenger passenger;
+ private Flight flight;
 
  public String getNumber() {
   return number;

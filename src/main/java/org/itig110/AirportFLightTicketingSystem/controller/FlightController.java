@@ -1,8 +1,7 @@
 package org.itig110.AirportFLightTicketingSystem.controller;
 
 import org.itig110.AirportFLightTicketingSystem.model.Flight;
-import org.itig110.AirportFLightTicketingSystem.model.FlightSearchInfo;
-import org.itig110.AirportFLightTicketingSystem.repo.FlightRepo;
+import org.itig110.AirportFLightTicketingSystem.dto.FlightSearchInfo;
 import org.itig110.AirportFLightTicketingSystem.service.FlightService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,8 +21,8 @@ public class FlightController {
         return flightService.findFlightByNumber(number);
     }
 
-    @PostMapping("/flight")
-    public List<Flight> findAllFlights(@RequestBody FlightSearchInfo flightSearchInfo){
+    @GetMapping("/flights")
+    public List<Flight> findAllFlightsByCriteria(@RequestBody FlightSearchInfo flightSearchInfo){
         return flightService.findAllFlights(flightSearchInfo);
     }
 

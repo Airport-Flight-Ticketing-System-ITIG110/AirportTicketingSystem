@@ -1,4 +1,4 @@
-package org.itig110.AirportFLightTicketingSystem.model;
+package org.itig110.AirportFLightTicketingSystem.dto;
 
 import java.time.LocalDateTime;
 
