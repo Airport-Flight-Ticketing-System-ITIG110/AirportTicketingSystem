@@ -9,21 +9,21 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/search/api/v1")
 public class FlightSearchController {
 
     @Autowired
     FlightService flightService;
 
 
-    @GetMapping("/flight/{number}")
-    public Flight findFlightByNumber(@PathVariable("number") String number){
-        return flightService.findFlightByNumber(number);
-    }
-
-    @GetMapping("/flights")
-    public List<Flight> findAllFlightsByCriteria(@RequestBody FlightSearchInfo flightSearchInfo){
-        return flightService.findAllFlights(flightSearchInfo);
-    }
+//    @GetMapping("/flight/{number}")
+//    public Flight findFlightByNumber(@PathVariable("number") String number){
+//        return flightService.findFlightByNumber(number);
+//    }
+//
+//    @GetMapping("/flights")
+//    public List<Flight> findAllFlightsByCriteria(@RequestBody FlightSearchInfo flightSearchInfo){
+//        return flightService.findAllFlights(flightSearchInfo);
+//    }
 
 }

@@ -1,13 +1,29 @@
 package org.itig110.AirportFLightTicketingSystem.model;
 
+import jdk.jfr.Enabled;
+import org.hibernate.annotations.CreationTimestamp;
+import org.itig110.AirportFLightTicketingSystem.util.DateUtil;
+
+import javax.annotation.processing.Generated;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
-public class Flight
-{
+
+@Entity
+public class Flight {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Long id;
     private String number;
     private String origin;
     private String destination;
-    private LocalDateTime time;
+
+    private LocalDateTime flightTime;
+
+    @CreationTimestamp
+    private LocalDateTime creationTime;
+
 
     public Flight() {
     }
@@ -41,11 +57,27 @@ public class Flight
         this.destination = destination;
     }
 
-    public LocalDateTime getTime() {
-        return time;
+    public Long getId() {
+        return id;
     }
 
-    public void setTime(LocalDateTime time) {
-        this.time = time;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public LocalDateTime getFlightTime() {
+        return flightTime;
+    }
+
+    public void setFlightTime(String flightTime) {
+        this.flightTime = DateUtil.getLocalDateFromString(flightTime);
+    }
+
+    public LocalDateTime getCreationTime() {
+        return creationTime;
+    }
+
+    public void setCreationTime(LocalDateTime creationTime) {
+        this.creationTime = creationTime;
     }
 }
