@@ -14,6 +14,20 @@ public class FlightService {
     @Autowired
     private FlightRepo flightRepo;
 
+    public Flight saveFlight(Flight flight){return flightRepo.save(flight);}
+
+    public Flight getFlightById(Long id)
+    {
+        return flightRepo.findById(id).get();
+    }
+
+    public void updateFlight(Flight flight) {flightRepo.save(flight);}
+
+    public void deleteFlight(Long id)
+    {
+        flightRepo.deleteById(id);
+    }
+
 //    public List<Flight> findAllFlights(FlightSearchInfo flightSearchInfo){
 //        return flightSearchRepo.findAllFlights(flightSearchInfo);
 //    }
@@ -22,7 +36,4 @@ public class FlightService {
 //        return flightSearchRepo.findFlightByNumber(number);
 //    }
 
-    public Flight saveFlight(Flight flight){
-        return flightRepo.save(flight);
-    }
 }

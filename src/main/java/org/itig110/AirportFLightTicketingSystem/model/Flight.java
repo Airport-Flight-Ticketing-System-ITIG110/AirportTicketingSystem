@@ -1,25 +1,28 @@
 package org.itig110.AirportFLightTicketingSystem.model;
 
-import jdk.jfr.Enabled;
 import org.hibernate.annotations.CreationTimestamp;
 import org.itig110.AirportFLightTicketingSystem.util.DateUtil;
-
 import javax.annotation.processing.Generated;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 
 @Entity
+@Table(name = "flight")
 public class Flight {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
     private String number;
     private String origin;
     private String destination;
 
     private LocalDateTime flightTime;
+
+    @OneToOne(mappedBy = "flight")
+    private Ticket ticket;
 
     @CreationTimestamp
     private LocalDateTime creationTime;

@@ -1,10 +1,20 @@
 package org.itig110.AirportFLightTicketingSystem.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "passenger")
 public class Passenger {
 
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name = "id")
     private Integer id;
     private String name;
     private String passengerNumber;
+
+    @OneToOne(mappedBy = "passenger")
+    private Ticket ticket;
 
     public Integer getId() {
         return id;
